@@ -1,0 +1,57 @@
+Block4_MainActivity.java
+
+##### CODE #########
+
+package com.bbs.block4_playingsounds;
+
+import android.media.MediaPlayer;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.Switch;
+
+public class MainActivity extends AppCompatActivity {
+
+    MediaPlayer mp3Music;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        mp3Music = MediaPlayer.create(this, R.raw.twofeet);
+        Switch switch_looping = (Switch)findViewById(R.id.switch_looping);
+        switch_looping.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                mp3Music.setLooping(isChecked);
+            }
+        });
+    }
+
+    public void playMusic (View v)
+    {
+        mp3Music.start();
+    }
+
+    public void pauseMusic(View v)
+    {
+        if(mp3Music.isPlaying())
+            mp3Music.pause();
+    }
+}
+
+
+
+######################################################
+How to play an audio file??
+
+- Create a res/raw folder to hold the myMusic.mp3 file
+- Use the MediaPlayer class:
+	MediaPlayer music = 
+						MediaPlayer.create(this, R.raw.myMusic);
+	music.start()
+	music.pause()
+	music.looping(true)
+	...
+	

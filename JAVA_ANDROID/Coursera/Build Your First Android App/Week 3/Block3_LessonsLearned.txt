@@ -1,0 +1,38 @@
+Block 3 Lessons Learned
+
+How to organize multiple views on the screen?
+
+- Use layouts (Linear layout, Relative layout...)
+- Linear Layout
+	- Orientation: vertical, horizontal
+	- To allow a view to occupy a given percentage of the layout:
+		- Give a layout a weightSum
+		- Give views a 0dp height or width and a fraction of the weightSum of the layout in the layout_weight attribute
+- Relative Layout
+	- Give id to views
+	- Position views with below, above, toRightOf.. + id of a reference view
+	
+How to display a background image?
+
+Copy the image file( JPG, PNG, gif...)
+	in the res/drawable folder(img.png)
+	file name starts with a letter and contains only letter, numbers and '_' character)
+Access the image and set background using
+	in XML: android:background = "@drawable/img_name"
+	in Java: myView.SetBackgroundResource(R.drawable.img_name)
+	
+	
+Q&A:
+1. A ViewGroup (such as a LinearLayout for instance) allows you to organize the components of the graphical user interface.
+
+ A component may be a ViewGroup it-self, containing other elements.
+ 
+2. For each View or ViewGroup you need to specify the layout_width and layout_height. You can use fixed sizes (in pixels for instance) 
+but which constant can you use to specify that the view should be just large enough for its content (and eventual padding)?
+
+wrap content
+
+3. For each View or ViewGroup you need to specify the layout_width and layout_height. You can use fixed sizes 
+(in pixels for instance) but which constant can you use to specify that the view should be as large as the view into which it is included?
+
+match_parent

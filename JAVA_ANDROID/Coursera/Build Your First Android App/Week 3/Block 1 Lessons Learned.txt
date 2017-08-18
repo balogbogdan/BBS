@@ -1,0 +1,57 @@
+Block 1 part 3 - Text
+
+How to set a button on the screen?
+Solution 1
+- In the XML file, with the help of the design tool for a WYSIWYG effect
+Solution 2
+In the java code, for dynamic design
+-new Button(getApplicationContext());
+-Properties are set using methods such as setText
+										  setBackgroundColor
+-Layout parameters are defined with LayoutParams objects
+-theLayout.addView(theButton, theParams)
+
+
+How to attach an action to a button?
+Solution 1:
+- In the XML file: define the "onClick" property of the button to the name of the 
+method to call("myMethod" for instance)
+- In the java file: code the "public void myMethod(View v)"
+v indicates the View which was clicked
+
+Solution 2:
+In the java file:
+- Retrieve a reference to the button defined in the XML file(use the findViewById method)
+- Attach an OnClickListener to the button(method setOnClickListener)
+- Define the onClick(View v) method for the class which implements the OnClickListener interface.
+
+
+Q&A:
+1.
+Q: For how long (in second) does a Toast displayed for a duration "Toast.LENGTH_SHORT" stays on the screen?
+A: For Short 2s and for Long 3.5s
+
+2.
+Q: You have defined a graphical user interface in an XML layout file named myUI. You create a new activity in a file name MyActivity.java. How to you specify that MyActivity displays myUI?
+A: In the onCreate method of MyActivity.java I call the setContentView method and I provide "R.layout.myUI" as parameter.
+
+3.
+Q: The visual structure of the user interface can be defined.
+A: in the Java code and/or in an XML file
+
+4.
+Q: What could be the interest of creating a button (or any other widget) from the Java code of an activity rather than from the associated XML layout file?
+A: It makes it possible to create the button only if a given condition is fulfilled at runtime.
+
+5.
+Q: What could be the interest of creating a button (or any other widget) from an XML layout file rather than from the Java code of an activity?
+A: The design view allows for a preview of the result without the need to deploy the app on a (real or emulated) device.
+   It separates the visual design and presentation aspects of the application from its control. Each aspect can even be taking care of by specialized persons.
+
+6.
+Q: In addition to the activity or application context, and the message to display, which parameter does the makeText method from the Toast class take?
+A: the duration of the pop-up (Toast.LENGTH_SHORT or Toast.LENGTH_LONG)
+
+7.
+Q: Which method of the Activity class allows you to retrieve a reference to a widget defined in the XML layout file (assuming you know the "name" of the widget)?
+A: findViewById
