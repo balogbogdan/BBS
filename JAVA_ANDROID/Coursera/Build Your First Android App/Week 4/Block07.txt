@@ -1,0 +1,20 @@
+Block07 WebPages
+
+- how to display a web page?
+	add a webView to your GUI
+	
+- if the web page is a resource of the application
+	- create an assets folder: file menu/ new / folder/ assets folder
+	- place your html file in the assets folder
+	- String url = "file://android_asset/myPage.html"
+- if the web page is hosted on the internet
+	- String url = "http://myserver/mypage.html"
+	#############REQUEST PERMISSION TO ACCES THE INTERNET
+	- request permision to acces the internet. in the android manifest xml
+	<uses-permission android:name="android.permission.INTERNET"/>
+	
+- load the web page in the webView:
+	webView.loadUrl(url);
+	
+- to avoid that links open into a browser activity:
+	webView.setWebViewClient(new WebViewClient());

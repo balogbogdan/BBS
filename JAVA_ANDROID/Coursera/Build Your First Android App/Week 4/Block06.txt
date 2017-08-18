@@ -1,0 +1,9 @@
+#############How to display an image?
+
+- Add an imageView to your GUI
+- Place your image(JPG,PNG or GIF file) in the res/drawable folder
+- in XML layout
+	<ImageView [...]
+		android:src="@drawable/nicepainting"/>
+- in the Java code:
+	myImageView.setImageResource(R.drawable.nicepainting);
